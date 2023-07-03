@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  label {
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  select {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  
+  @media screen and (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .form {
+      max-width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .form {
+      padding: 10px;
+    }
+  }
+  
