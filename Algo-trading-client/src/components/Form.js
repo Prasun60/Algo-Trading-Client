@@ -3,7 +3,6 @@ import * as XLSX from "xlsx";
 import writeXlsxFile from "write-excel-file";
 import "./Form.css";
 import axios from "axios";
-
 const Form = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,23 +26,20 @@ const Form = () => {
     formDatab.append("Trading Symbol2", tradingsymbol2);
     console.log(formDatab.values())
 
-    // axios.post("http://localhost:3001/submit-form",formDatab).then
-    // (response=>{
-    //   console.log(response.data)
-    //   formEle.reset();
-    // })
+    
     await axios.delete("https://sheet.best/api/sheets/9581743f-f5a7-48cb-85a1-595252fdd053/0")
+
 
 
 
     await axios.post('https://sheet.best/api/sheets/9581743f-f5a7-48cb-85a1-595252fdd053',formDatab).then(response=>{
      formEle.reset();
     })
-    // await writeXlsxFile(formDatab, {
-    //   // (optional) column widths, etc.
-    //   fileName:"form_data.xlsx",
-    //   filePath: "./form_data.xlsx",
-    // });
+   
+
+    await axios.get("http://localhost:3001/").then((response)=>{
+      console.log(response.msg)
+    })
 
 
     
